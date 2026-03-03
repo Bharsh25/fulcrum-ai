@@ -11,7 +11,7 @@ export default function Sidebar() {
     const getThreads=async()=>{
         
         try{
-            const response = await fetch("http://localhost:8080/api/threads");
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/threads`);
             const data = await response.json();
             const filteredData=data.map(thread=>({
                 threadId: thread.threadId,

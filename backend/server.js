@@ -11,7 +11,14 @@ import authRoutes from "./Routes/auth.js";
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+
+    app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://fulcrum-ai-chi.vercel.app"
+    ],
+    credentials: true
+    }));
 
 app.use('/api', chatRoutes);
 
