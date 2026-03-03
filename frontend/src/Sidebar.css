@@ -1,0 +1,183 @@
+.sidebar {
+    background: linear-gradient(180deg, #000000, #020617);
+    color: #cbd5e1;
+    height: 100vh;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* TOP */
+
+.topSection {
+    padding: 15px;
+}
+
+
+/* LOGO ROW */
+
+.logoRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    height: 30px;
+    width: 30px;
+}
+
+.newChatBtn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.newChatBtn:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+
+/* RECENT LABEL */
+
+.recentLabel {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+
+/* HISTORY */
+
+.history {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.history li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.history li:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+.history li.highlighted {
+    background: rgba(255,255,255,0.08);
+}
+
+.threadTitle {
+    font-size: 14px;
+}
+
+.deleteIcon {
+    opacity: 0;
+    font-size: 12px;
+}
+
+.history li:hover .deleteIcon {
+    opacity: 1;
+}
+
+
+/* PROFILE SECTION */
+
+.profileSection {
+    padding: 12px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+/* PROFILE CARD */
+
+.profileCard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.profileCard:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+
+/* AVATAR */
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+
+/* USER INFO */
+
+.userInfo h3 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.userInfo p {
+    margin: 0;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+
+/* SETTINGS ICON */
+
+.settingsIcon {
+    margin-left: auto;
+    opacity: 0.6;
+}
+
+.settingsIcon:hover {
+    opacity: 1;
+}
+
+.newChatRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 10px 14px;
+    margin: 8px 10px;
+
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.newChatRow:hover {
+    background: rgba(255,255,255,0.05);
+}
