@@ -4,9 +4,7 @@ A full-stack AI-powered chat application built with the MERN stack, featuring au
 📸 Some Visuals-->
  <img width="1919" height="908" alt="image" src="https://github.com/user-attachments/assets/fb14151b-fdd4-4e59-9a49-22d70e928b24" />
 
-🌐 Live Demo-->
-Frontend (Vercel): https://fulcrum-ai-chi.vercel.app ,
-Backend (Render): https://fulcrum-ai.onrender.com
+🌐 Live Demo--> https://fulcrum-ai-chi.vercel.app ,
 
 🧠 Features -->
 🔐 JWT Authentication (Login / Register), 
