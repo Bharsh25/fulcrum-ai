@@ -9,13 +9,13 @@ Frontend (Vercel): https://your-vercel-app.vercel.app
 Backend (Render): https://your-backend.onrender.com
 
 🧠 Features -->
-🔐 JWT Authentication (Login / Register)
-💬 Thread-based Chat System
-🗑 Delete Chat Threads
-🧾 Persistent Chat History (MongoDB)
-🎨 Modern Dark UI
-📱 Responsive Layout 
-☁️ Full Stack Deployment (Vercel + Render)
+🔐 JWT Authentication (Login / Register), 
+💬 Thread-based Chat System, 
+🗑 Delete Chat Threads, 
+🧾 Persistent Chat History (MongoDB), 
+🎨 Modern Dark UI, 
+📱 Responsive Layout, 
+☁️ Full Stack Deployment (Vercel + Render) 
 
 🛠 Tech Stack -->
 Frontend ->
