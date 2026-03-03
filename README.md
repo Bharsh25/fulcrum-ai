@@ -32,7 +32,9 @@ MongoDB (Atlas),
 Mongoose,
 JWT Authentication,
 bcrypt,
-OpenAI API
+
+OpenAI API ( gpt-5-mini ) ->
+📜Model Information: This project uses OpenAI's GPT-5 mini model, trained on data available up to early 2024.
 
 Deployment ->
 Vercel (Frontend),
