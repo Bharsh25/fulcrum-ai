@@ -55,7 +55,7 @@ const changeThread = async (newthreadId) => {
 
 const handleDeleteThread = async (threadId) => {
     try {
-        const response = await fetch(`http://localhost:8080/api/threads/${threadId}`, {method: 'DELETE'});
+        const response = await fetch(`${import.meta.env.VITE_API_URL}api/threads/${threadId}`, {method: 'DELETE'});
             const data = await response.json();
         
             // Remove the thread from local state
