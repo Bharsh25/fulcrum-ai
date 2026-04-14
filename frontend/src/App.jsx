@@ -18,6 +18,7 @@ function App() {
   const [prevChat, setPrevChat] = useState([]);
   const [newChat, setNewChat] = useState(true);
   const [allThreads, setAllThreads] = useState([]);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const providerValue = {
     prompts, setprompts,
@@ -47,8 +48,8 @@ function App() {
             element={
               token ? (
                 <div className="app">
-                  <Sidebar />
-                  <ChatWindow />
+                  <Sidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
+                  <ChatWindow isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
                 </div>
               ) : (
                 <Navigate to="/login" />

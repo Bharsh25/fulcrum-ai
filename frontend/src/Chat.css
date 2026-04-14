@@ -30,9 +30,10 @@
     background-color: #323232;
     padding: 10px 20px;
     border-radius: 14px;
-    margin-left: 15rem;
-    max-width: 500px;
+    margin-left: auto;
+    max-width: 80%;
     width: fit-content;
+    align-self: flex-end;
 }
 
 .hljs {
@@ -41,4 +42,15 @@
 
 pre {
     white-space: pre-wrap;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .chats {
+        padding: 1rem;
+        max-width: 100%;
+    }
+    .userMessage {
+        max-width: 90%;
+    }
 }

@@ -4,10 +4,10 @@ import { MyContext } from './MyContext.jsx';
 import { useContext, useState, useEffect } from 'react';
 import { RingLoader } from 'react-spinners';
 import { useNavigate } from "react-router-dom";
-import logo from "./assets/fulcrum-logo2.png";
+import logo from "./assets/fulcrumlogo.png";
 import { jwtDecode } from "jwt-decode";
 
-export default function ChatWindow() {
+export default function ChatWindow({ isSidebarOpen, setIsSidebarOpen }) {
 
     const {
         prompts, setprompts,
@@ -89,19 +89,19 @@ export default function ChatWindow() {
         }
         setprompts('');
     }, [reply]
-    
 
-);
+
+    );
 
     const [user, setUser] = useState(null);
-    
-        useEffect(() => {
-    
+
+    useEffect(() => {
+
         const token = localStorage.getItem("token");
-    
+
         if (token) {
             const decoded = jwtDecode(token);
-                setUser(decoded);
+            setUser(decoded);
         }
 
     }, []);
@@ -114,42 +114,48 @@ export default function ChatWindow() {
             {/* NAVBAR */}
             <div className="navbar">
 
-    <span className="logoText">FULCRUM AI</span>
-
-    <div className="userMenu">
-
-        <div
-            className="userIcon"
-            onClick={() => setIsOpen(!isOpen)}>
-            {user?.username?.charAt(0).toUpperCase()}
-        </div>
-
-        {isOpen && (
-            <div className="dropDown">
-                <div className="dropDownItem">
-                    Upgrade Plan <i className="fa-solid fa-up-right-from-square"></i>
+                <div className="navbarLeft">
+                    <i 
+                        className="fa-solid fa-bars hamburgerIcon" 
+                        onClick={() => setIsSidebarOpen(true)}
+                    ></i>
+                    <span className="logoText">FULCRUM AI</span>
                 </div>
 
-                <div className="dropDownItem">
-                    Settings <i className="fa-solid fa-gear"></i>
+                <div className="userMenu">
+
+                    <div
+                        className="userIcon"
+                        onClick={() => setIsOpen(!isOpen)}>
+                        {user?.username?.charAt(0).toUpperCase()}
+                    </div>
+
+                    {isOpen && (
+                        <div className="dropDown">
+                            <div className="dropDownItem">
+                                Upgrade Plan <i className="fa-solid fa-up-right-from-square"></i>
+                            </div>
+
+                            <div className="dropDownItem">
+                                Settings <i className="fa-solid fa-gear"></i>
+                            </div>
+
+                            <div
+                                className="dropDownItem"
+                                onClick={() => {
+                                    localStorage.removeItem("token");
+                                    setIsOpen(false);
+                                    navigate("/login");
+                                }}
+                            >
+                                Logout <i className="fa-solid fa-arrow-right-from-bracket"></i>
+                            </div>
+                        </div>
+                    )}
+
                 </div>
 
-                <div
-                    className="dropDownItem"
-                    onClick={() => {
-                        localStorage.removeItem("token");
-                        setIsOpen(false);
-                        navigate("/login");
-                    }}
-                >
-                    Logout <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                </div>
             </div>
-        )}
-
-    </div>
-
-</div>
             {/* BODY */}
             <div className="chatBody">
 
@@ -181,9 +187,9 @@ export default function ChatWindow() {
                 ) : (
                     <Chat />
                 )}
-                </div>
+            </div>
 
-<div className="loadWrapper">
+            <div className="loadWrapper">
                 {loading && <RingLoader color="#ffffff" />}
             </div>
 

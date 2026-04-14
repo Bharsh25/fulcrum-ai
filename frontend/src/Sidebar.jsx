@@ -5,7 +5,7 @@ import {v4 as uuidv4} from 'uuid';
 import { jwtDecode } from "jwt-decode";
 
 
-export default function Sidebar() {
+export default function Sidebar({ isSidebarOpen, setIsSidebarOpen }) {
     const {allThreads, setAllThreads,currentThreadId,setNewChat,setprompts,setReply,setCurrentThreadId,setPrevChat} = useContext(MyContext);
 
     const getThreads=async()=>{
@@ -36,6 +36,7 @@ export default function Sidebar() {
     setReply(null);
     setCurrentThreadId(uuidv4()); // Set the state
     setPrevChat([]);
+    if (window.innerWidth <= 768) setIsSidebarOpen(false);
 };
 
 const changeThread = async (newthreadId) => {
@@ -47,6 +48,7 @@ const changeThread = async (newthreadId) => {
             setPrevChat(data);
             setNewChat(false);
             setReply(null);
+            if (window.innerWidth <= 768) setIsSidebarOpen(false);
         } catch (error) {
             console.error("Fetch error:", error);
         }
@@ -85,8 +87,14 @@ const handleDeleteThread = async (threadId) => {
 
 
     return (
-        
-    <section className="sidebar">
+        <>
+            {isSidebarOpen && (
+                <div 
+                    className="sidebar-backdrop" 
+                    onClick={() => setIsSidebarOpen(false)}
+                ></div>
+            )}
+            <section className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
 
         {/* TOP */}
         <div className="topSection">
@@ -150,5 +158,6 @@ const handleDeleteThread = async (threadId) => {
         </div>
 
     </section>
+    </>
 );
 };
